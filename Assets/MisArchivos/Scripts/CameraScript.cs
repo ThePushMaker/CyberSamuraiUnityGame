@@ -16,12 +16,16 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Se toma la posicion de la camara
-        Vector3 position = transform.position;
-        // Solo en el eje X, que es de de izquierda a derecha, vamos a compiarnos la posición de john
-        position.x = John.transform.position.x;
-        // position.y = John.transform.position.y+1;
-        transform.position = position;
+        if (John != null) 
+        {
+            // Se toma la posicion de la camara
+            Vector3 position = transform.position;
+            // Solo en el eje X, que es de de izquierda a derecha, vamos a compiarnos la posición de john
+            position.x = John.transform.position.x;
+            // position.y = John.transform.position.y+1;
+            transform.position = position;
+
+        }
 
     }
 }

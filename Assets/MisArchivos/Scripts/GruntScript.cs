@@ -14,6 +14,8 @@ public class GruntScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (John == null) return; //esta linea saca de la función
+        
         // Transform position es la posición del grunt
         // al retarlas obtenemos el vector que va de nosotros hacia john
         Vector3 direction = John.transform.position - transform.position;

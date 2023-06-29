@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
 
+    public AudioClip Sound;
+
     public float Speed;
 
     private Rigidbody2D Rigidbody2D;
@@ -15,6 +17,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(Sound);
     }
 
     // Update is called once per frame
@@ -40,14 +43,14 @@ public class BulletScript : MonoBehaviour
         // Destuye la bala
         Destroy(gameObject);
     }
-    // evento especial de unity que se va a llamar cada vez que la bala choque con algo
-    private void OnCollisionEnter2D(Collision2D collision) 
+
+    private void OnTriggerEnter2D (Collider2D collision) 
     {
-        // si nos devuelve el componente es porque si lo ha colisionado
-        JohnMovement john = collision.collider.GetComponent<JohnMovement>();
-        GruntScript grunt = collision.collider.GetComponent<GruntScript>();
+         // si nos devuelve el componente es porque si lo ha colisionado
+        JohnMovement john = collision.GetComponent<JohnMovement>();
+        GruntScript grunt = collision.GetComponent<GruntScript>();
         if (john != null) //Si john existe significa que hemos chocado con john
-        {
+        { 
             john.Hit(); 
         }
         if (grunt != null)
@@ -56,5 +59,11 @@ public class BulletScript : MonoBehaviour
         }
         // DestroyBullet();
     }
+
+    // evento especial de unity que se va a llamar cada vez que la bala choque con algo
+    // private void OnCollisionEnter2D(Collision2D collision) 
+    // {
+       
+    // }
 
 }
