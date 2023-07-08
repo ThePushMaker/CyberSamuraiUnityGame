@@ -11,11 +11,11 @@ public class BulletScript : MonoBehaviour
     // Vector 2 contiene la dirección en la que va a avanzar la bala 
     private Vector2 Direction;
 
-    // [Range(1, 100)]
-    [SerializeField] private float speed = 1000f;
+    [Range(1, 15)]
+    [SerializeField] private float speed;
 
-    // [Range(1, 10)]
-    [SerializeField] private float lifeTime = 0.5f;
+    [Range(0, 1)]
+    [SerializeField] private float lifeTime;
 
     private Rigidbody2D rb;
 
