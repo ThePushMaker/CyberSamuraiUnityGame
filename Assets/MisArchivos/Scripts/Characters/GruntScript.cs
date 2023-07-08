@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GruntScript : MonoBehaviour
 {
-    public GameObject BulletPrefab;
     
     public GameObject John;
+    public GameObject BulletPrefab;
 
-    private float LastShoot;
     private int Health = 3;
+    private float LastShoot;
 
     // Update is called once per frame
     private void Update()
@@ -25,7 +25,7 @@ public class GruntScript : MonoBehaviour
         // la funcion Mathf.Abs permite obtener siempre el valor absoluto (positivo)
         float distance = Mathf.Abs(John.transform.position.x - transform.position.x);
 
-        if (distance < 5.0f && Time.time > LastShoot + 0.5f) {
+        if (distance < 5.0f && Time.time > LastShoot + 2.0f) {
             Shoot();
             LastShoot = Time.time;
         }
@@ -35,9 +35,11 @@ public class GruntScript : MonoBehaviour
     {
         // Debug.Log("Shoot");
 
-        Vector3 direction;
-        if (transform.localScale.x == 1.0f) direction=Vector2.right;
-        else direction= Vector2.left;
+        Vector3 direction = new Vector3 (transform.localScale.x, 0.0f, 0.0f);
+
+
+        // if (transform.localScale.x == 1.0f) direction=Vector2.right;
+        // else direction= Vector2.left;
 
         // Esta funcion instantiate, lo que hace es toma un prefab, en este caso la bala y lo duplica en algun sitio del mundo
         // valores: QueObjeto, QueUbicacion, QueRotacion
@@ -50,7 +52,7 @@ public class GruntScript : MonoBehaviour
 
     public void Hit() 
     {
-        Health = Health - 1;
-        if(Health == 0) Destroy(gameObject);
+        Health -= 1;
+        if(Health == 0) Destroy(gameObject, 0);
     }
 }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7413085649122539477}
   - component: {fileID: 7413085649122539474}
   - component: {fileID: 7413085649122539476}
-  - component: {fileID: 7413085649122539479}
   - component: {fileID: 7413085649122539481}
   - component: {fileID: 7413085649122539478}
+  - component: {fileID: 7413085649122539479}
   m_Layer: 0
   m_Name: BulletPrefab
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1962113197, guid: 7918747eca71083488c2a6b6a9ac2bcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,20 +109,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7413085649122539479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7413085649122539475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a935385dbe2e7b48b0c980262f9807e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sound: {fileID: 8300000, guid: bbf2dd11ffef3c54e9091be9ea028be0, type: 3}
-  Speed: 8
 --- !u!50 &7413085649122539481
 Rigidbody2D:
   serializedVersion: 4
@@ -131,7 +117,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7413085649122539475}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -142,8 +128,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!58 &7413085649122539478
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -160,3 +146,18 @@ CircleCollider2D:
   m_Offset: {x: -0.006939873, y: 0.009253286}
   serializedVersion: 2
   m_Radius: 0.08163931
+--- !u!114 &7413085649122539479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7413085649122539475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a935385dbe2e7b48b0c980262f9807e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sound: {fileID: 8300000, guid: bbf2dd11ffef3c54e9091be9ea028be0, type: 3}
+  speed: 15
+  lifeTime: 0.3
