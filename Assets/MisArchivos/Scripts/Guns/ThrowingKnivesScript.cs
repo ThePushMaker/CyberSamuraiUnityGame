@@ -35,8 +35,8 @@ public class ThrowingKnivesScript : MonoBehaviour
             // Se toma la posicion de la camara
             Vector3 position = transform.position;
             // Solo en el eje X, que es de de izquierda a derecha, vamos a compiarnos la posición de john
-            position.x = John.transform.position.x;
-            position.y = John.transform.position.y+3f;
+            position.x = John.transform.position.x+0f;
+            position.y = John.transform.position.y+0.25f;
             transform.position = position;
 
         }
